@@ -1,5 +1,6 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
+from .db_articles import articles
 
 def home_view(request): 
     return render(request, "home.html")
@@ -9,4 +10,4 @@ def contact_view(request):
 
 
 def article_view(request):
-    return render(request, "article.html")
+    return render(request, "article.html", context={'articles': articles})
